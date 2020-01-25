@@ -13,8 +13,9 @@ function find(selector){
 
 var  getAllFoodForm = find ('form ')
 var LoadingSpinner = document.getElementById("loader")
-var resultAllfood  = find ('ul')
-
+var resultAllfood  = find ('div')
+var results = document.getElementById('resulltItem')
+var titleElement = document.getElementById('title')
 // fetching the data from api 
 function fetchAllFoodItem(searchQuery){
     LoadingSpinner.style.display= "block"
@@ -28,11 +29,26 @@ function fetchAllFoodItem(searchQuery){
       return responseinJSON.recipes  
     })
     .then(function(data){
+        LoadingSpinner.style.display = 'none';
+        if(typeof data === "undefined"){
+            console.log("not found man");
+        }else{
         console.log(data)
         for ( i=0 ; i < data.length ; i++){
             console.log(data[i].title)
-            return data     
+            var newDiv = document.createElement('div');
+            newDiv.setAttribute("id", "recipeId");
+            newDiv.setAttribute("class", "recipeClass");
+            newDiv.innerHTML = data[i].title;
+            //console.log(newDiv);
+            
+            results.insertAdjacentElement('beforeend', newDiv);
+
+
         }
+        results.style.color = 'red';
+        }
+            return data     
 
     })
     .catch(function(err){
