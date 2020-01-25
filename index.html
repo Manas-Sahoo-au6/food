@@ -1,52 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
- 
-  <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <body>
 
-<nav class="navbar ">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <img class="navbar-brand" href="#" src="D:\manas_webdevelopement\Manas-Sahoo-au6\monthly-test\JAN_TEST\image\transparent.png">
-     
+    <nav class="navbar ">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <img class="navbar-brand" href="#"
+                    src="D:\manas_webdevelopement\Manas-Sahoo-au6\monthly-test\JAN_TEST\image\transparent.png">
+
+            </div>
+            <ul class="nav navbar-nav" style="color: black;">
+                <li class="active"><a href="#"><strong> how it works</strong> </a></li>
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">menu <span
+                            class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">How it works </a></li>
+                        <li><a href="#">pricing </a></li>
+                        <li><a href="#">menu</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">gifts</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> register</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Reedem Your Gift</h1>
+
+        <form>
+            <input type="text" name="searchFood" class=" itemName" placeholder="search your food here " required>
+            <button style="background-color: indigo; color: ivory;">Get receipe</button>
+
+        </form>
+
+
+        <div class="loader">Loading...</div>
+
+
+        <div class = "resulltItem" >
+            <ul></ul>
+        </div>
+
+
     </div>
-    <ul class="nav navbar-nav" style="color: black;">
-      <li class="active"><a href="#"><strong> how it works</strong> </a></li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">menu <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">How it works </a></li>
-          <li><a href="#">pricing </a></li>
-          <li><a href="#">menu</a></li>
-        </ul>
-      </li>
-      <li><a href="#">gifts</a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> register</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-    </ul>
-  </div>
-</nav>
-  
-<div class="container">
-    <h1>Reedem Your Gift</h1>
 
-    <form>
-        <input type="text" name  ="serach" placeholder="search your food here ">
-        <button  style="background-color: indigo; color: ivory;">Get receipe</button>
-    </form>
-     
-  
-</div>
-
+    
 </body>
+
+<script src="app.js"></script>
+
 </html>
