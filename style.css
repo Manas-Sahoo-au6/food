@@ -1,6 +1,22 @@
-.container-fluid{
-    background-color: aqua;
-    height: fit-content;
-
-  
+body {
+    background-image: url(https://www.theloveofspice.com/wp-content/uploads/2018/06/coriander-mint-chutney-recipe.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.navbar-brand{
+    height: 75px;
+    width: auto;
+}
+.navbar{
+    color: black;
+    text-shadow: black;
+    font-family: 'Lato', sans-serif;
+}
+.container {
+    font-family: 'Lato', sans-serif;    
+    color: black;
+    text-align: center;
+    font-weight: 2000;
+    margin-top: 70px;
+    
 }
