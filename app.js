@@ -12,7 +12,7 @@ function find(selector){
 //step1 
 
 var  getAllFoodForm = find ('form ')
-var LoadingSpinner = document.getElementsByClassName("loader")
+var LoadingSpinner = document.getElementById("loader")
 var resultAllfood  = find ('ul')
 
 // fetching the data from api 
@@ -22,13 +22,21 @@ function fetchAllFoodItem(searchQuery){
 
 
     fetch (baseURL).then(function(response){
-        return response.json()
+        return response.json()  
     })
     .then(function(responseinJSON){
-       console.log(responseinJSON)
+      return responseinJSON.recipes  
+    })
+    .then(function(data){
+        console.log(data)
+        for ( i=0 ; i < data.length ; i++){
+            console.log(data[i].title)
+            return data     
+        }
+
     })
     .catch(function(err){
-        console.log(err)
+        alert(err.messege)
     });             
 
 }
@@ -39,6 +47,16 @@ function fetchAllFoodItem(searchQuery){
 getAllFoodForm.addEventListener('submit',function(event){
     event.preventDefault();
     var searchQuery = event.target.searchFood.value;
+    fetchAllFoodItem(searchQuery)
+    .then(function(food){
+        $('.new').append("<h1>ALL DELICIOUS RECEIPE ARE HERE" + searchQuery + "</h1>")
+        LoadingSpinner.style.display = "none"
+        for (j=0 ; j<food.length; j++){
+            console.log(food[j].title)
+        }
+
+    })
+
     console.log(searchQuery);
     event.target.searchFood.value =''
     event.target.searchFood.focus()
