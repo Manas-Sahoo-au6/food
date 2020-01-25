@@ -29,22 +29,34 @@ function fetchAllFoodItem(searchQuery){
       return responseinJSON.recipes  
     })
     .then(function(data){
+        $('.recipeClass').remove();
         LoadingSpinner.style.display = 'none';
         if(typeof data === "undefined"){
             console.log("not found man");
         }else{
         console.log(data)
         for ( i=0 ; i < data.length ; i++){
-            console.log(data[i].title)
-            var newDiv = document.createElement('div');
-            newDiv.setAttribute("id", "recipeId");
-            newDiv.setAttribute("class", "recipeClass");
-            newDiv.innerHTML = data[i].title;
-            //console.log(newDiv);
             
+            var newDiv = document.createElement('div');
+            var titelDiv = document.createElement('div');
+            var imageDiv = document.createElement('IMG');        
+            var publicherDiv = document.createElement('div');
+            
+            newDiv.setAttribute("class", "recipeClass");
+            publicherDiv.setAttribute("class", "publicherClass");
+            titelDiv.setAttribute("class", "titleClass");
+            
+            imageDiv.setAttribute("src",data[i].image_url);
+
+            titelDiv.innerHTML = data[i].title;
+            publicherDiv.innerHTML = data[i].publisher;
+            newDiv.appendChild(titelDiv);
+            newDiv.appendChild(publicherDiv);
+            //debugger;
+            newDiv.appendChild(imageDiv)
+            
+                        
             results.insertAdjacentElement('beforeend', newDiv);
-
-
         }
         results.style.color = 'red';
         }
