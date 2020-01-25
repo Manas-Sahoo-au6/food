@@ -15,34 +15,42 @@ var  getAllFoodForm = find ('form ')
 var LoadingSpinner = document.getElementsByClassName("loader")
 var resultAllfood  = find ('ul')
 
-
-
-// input item given by the user and submited 
-
-
-
-
-
-
-
 // fetching the data from api 
-function fetchAllFoodItem(itemName){
+function fetchAllFoodItem(searchQuery){
     LoadingSpinner.style.display= "block"
-    var baseURL = `https://forkify-api.herokuapp.com/api/search?q=pizza`
+    var baseURL = `https://forkify-api.herokuapp.com/api/search?q= ${searchQuery} `;
 
 
-    return fetch(baseURL)
-    .then(function(response){
+    fetch (baseURL).then(function(response){
         return response.json()
     })
-    .then(function(responseJSON){
-        return responseJSON.pizza
+    .then(function(responseinJSON){
+       console.log(responseinJSON)
     })
     .catch(function(err){
         console.log(err)
-    })
+    });             
 
 }
+
+
+
+// input item given by the user and submited 
+getAllFoodForm.addEventListener('submit',function(event){
+    event.preventDefault();
+    var searchQuery = event.target.searchFood.value;
+    console.log(searchQuery);
+    event.target.searchFood.value =''
+    event.target.searchFood.focus()
+
+}); 
+
+
+
+
+
+
+
 
 
 

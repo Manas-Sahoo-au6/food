@@ -33,7 +33,7 @@ body {
     -webkit-transform: translateZ(0);
     -ms-transform: translateZ(0);
     transform: translateZ(0);
-    display: none;
+    display: block;
   }
   @-webkit-keyframes load5 {
     0%,
